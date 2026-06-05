@@ -355,3 +355,18 @@ th{
   }
 }
 
+.attracties{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.attracties .attractie img{
+  width: 90%;
+}
+
+@media (max-width: 600px){
+  .attracties{
+    display: block;
+  }
+}
+

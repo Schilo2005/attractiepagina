@@ -26,6 +26,37 @@ require_once 'admin/backend/config.php';
         </aside>
         <main>
             <!-- hier komen de attractiekaartjes -->
+             <h1> kaartjes</h1>
+
+             <div class="attracties">
+                <?php
+                require_once 'admin/backend/conn.php';
+
+                $query = "SELECT * FROM rides";
+                $statement = $conn->prepare($query);
+                $statement->execute();
+                $rides = $statement->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+
+                <div class="attracties">
+
+                <?php foreach($rides as $ride): ?>
+
+                    <div class="attractie">
+
+                        <pre>
+                            <?php print_r($ride); ?>
+                        </pre>
+
+                    </div>
+
+                <?php endforeach; ?>
+
+                </div>
+
+                
+             </div>
+
         </main>
     </div>
 
