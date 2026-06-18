@@ -1,6 +1,6 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com */
 
-/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/* main.css 2.1.0 | MIT License | https://github.com */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -11,51 +11,36 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/* Standaard instellingen voor de hele pagina */
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+  color: #222; /* Geeft tekst een donkergrijze kleur */
+  font-size: 1em; /* Standaard lettergrootte */
+  line-height: 1.4; /* Ruimte tussen de tekstregels */
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
+/* Verandert de achtergrondkleur als je tekst selecteert (sleept met je muis) in Firefox */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
+/* Verandert de achtergrondkleur als je tekst selecteert in andere browsers */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
+/* Styling voor een horizontale lijn (<hr>) */
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc; /* Maakt een dun grijs lijntje */
   margin: 1em 0;
   padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
+/* Zorgt ervoor dat media-elementen netjes uitlijnen met de tekst */
 audio,
 canvas,
 iframe,
@@ -65,20 +50,14 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
+/* Verwijdert de standaard randen rondom een formulier-groep */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
+/* Zorgt ervoor dat een groot tekstvak alleen verticaal groter/kleiner gesleept kan worden */
 textarea {
   resize: vertical;
 }
@@ -87,286 +66,345 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
 /* ALGEMEEN */
-html{
+html {
+    /* Command: Zet de basislettergrootte van de website op 16 pixels */
     font-size: 16px;
 }
 
-body{
+body {
+    /* Command: Gebruik het Roboto lettertype voor alle teksten */
     font-family: Roboto, sans-serif;
+    background-color: #fcfdfd; /* Een heel lichtgrijze, bijna witte achtergrond */
 }
 
-.container{
+/* Geeft de buitenste container witruimte aan de linker- en rechterkant */
+.container {
     margin-left: 4rem;
     margin-right: 5rem;
 }
 
-.msg{
+/* Styling voor een meldingen-box (bijvoorbeeld een succesmelding) */
+.msg {
     margin: 1rem 0;
     padding: 1rem;
-    background-color: #3ED67D;
-    border-radius: 4px;
+    background-color: #3ED67D; /* Felgroene achtergrond */
+    border-radius: 4px; /* Subtiele ronde hoeken */
 }
 
 /* HEADER + NAV */
-.container.header{
+.container.header {
+    /* Command: Zet logo, titel en menu netjes naast elkaar op één lijn */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Verdeelt de ruimte tussen de onderdelen */
 }
 
-.container.content{
+/* LAYOUT HOOFDCONTAINER */
+.container.content {
+    /* Command: Splits het scherm in een zijbalk van 250px en de rest voor de kaarten */
     display: grid;
     grid-template-columns: 250px 1fr;
-    margin-top: 3rem;
-    column-gap: 5rem;
+    margin-top: 3rem; /* Ruimte aan de bovenkant */
+    column-gap: 5rem; /* Ruimte tussen de zijbalk spin en de attracties */
+    align-items: start; /* Zorgt dat de zijbalk niet onnodig lang naar beneden rekt */
 }
 
-header{
+/* De bovenbalk van de website */
+header {
     font-size: 1.25rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    /* Command: Voeg de achtergrondafbeelding toe aan de header */
     background-image: url(../img/park01.jpg);
     background-position: center;
+    /* Legt een donkergroene, half-transparante laag over de afbeelding voor betere leesbaarheid */
     box-shadow: inset 0 0 0 1000px rgba(29, 98, 58, 0.5);
 }
 
-header, nav a{
+/* Maakt de tekstkleur van de header en de links in het menu wit/lichtgroen */
+header, nav a {
     color: #f5fcf8;
 }
 
-.logo{
+/* Zorgt dat het logo maximaal 250 pixels breed wordt */
+.logo {
     max-width: 250px;
 }
 
-header nav{
+/* Zorgt dat de navigatielinks helemaal naar rechts worden geduwd */
+header nav {
     flex-grow: 1;
     text-align: right;
 }
 
-header h1{
-    font-family: Oxanium;
-    font-weight: 600;
+/* Styling voor de hoofdtitel in de header */
+header h1 {
+    font-family: Oxanium; /* Gebruikt het Oxanium lettertype */
+    font-weight: 600; /* Maakt de tekst dikgedrukt */
     margin: 0 5rem;
-    text-shadow: 0 0 7px black;
+    text-shadow: 0 0 7px black; /* Geeft de letters een zwarte gloed/schaduw */
 }
 
-/* FORMS */
-.form-group{
-    margin: 1rem 0;
+/* FORMS EN INVOERVELDEN VAN DE BEHEERPAGINA */
+.form-group {
+    margin: 1rem 0; /* Ruimte boven en onder een invoerveld */
 }
 
-label{
-    cursor: pointer;
+/* Styling voor de tekstlabels voor invoervelden */
+label {
+    cursor: pointer; /* Verandert de muis in een handje */
     display: inline-block;
-    min-width: 140px;
+    min-width: 140px; /* Zorgt dat alle labels even breed zijn, zodat velden uitlijnen */
     vertical-align: top;
 }
 
-.form-input{
+/* Maakt de invoervelden op de beheerpagina 600 pixels breed */
+.form-input {
     width: 600px;
 }
 
-/* TABELLEN */
-table{
+/* TABELLEN VAN DE ADMIN OVERZICHTEN */
+table {
+    width: 100%; /* Maakt de tabel zo breed als het scherm */
+}
+
+th {
+    text-align: left; /* Zorgt dat de tabelkoppen links uitlijnen */
+}
+
+/* Uitgebreide tabelstyling binnen de container */
+.container table {
+    width: 100%;
+    border-collapse: collapse; /* Haalt dubbele randen tussen cellen weg */
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styling voor de koppen van de tabel */
+.container th {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600; 
+    padding: 12px; /* Ruimte binnen de cel */
+    text-align: left;
+    color: #0B351D; 
+    border-bottom: 2px solid #E5E5E5; /* Dikke streep onder de koppen */
+}
+
+/* Styling voor de gewone cellen in de tabel */
+.container td {
+    padding: 12px;
+    text-align: left;
+    color: #0B351D; 
+    border-bottom: 1px solid #E5E5E5; /* Dunne streep tussen de rijen */
+}
+
+.container tr:nth-child(odd) {
+    /* Command: Geef de oneven rijen in de tabel een heel lichtgroene kleur */
+    background-color: #F5FCF8;
+}
+
+.container tr:nth-child(even) {
+    /* Command: Geef de even rijen in de tabel een witte kleur */
+    background-color: #FFFFFF;
+}
+
+/* Maakt specifieke kolommen (themagebied en lengte) iets lichter van kleur */
+.container td.themagebied, 
+.container td.lengte {
+    color: #849D8E;
+}
+
+
+/* ==========================================================================
+   NIEUW: SIDEBAR EN FILTERS STYLING (LINKS)
+   ========================================================================== */
+
+/* Command: Richt de filters in de zijbalk netjes verticaal onder elkaar in */
+.sidebar-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Ruimte van 15 pixels tussen de filters */
+}
+
+.filter-group {
+    position: relative;
     width: 100%;
 }
 
-th{
-    text-align: left;
+/* Command: Styling voor de dropdowns en de zoekbalk invoer */
+.sidebar-filters select, 
+.sidebar-filters input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-size: 0.95rem;
+    color: #24292f;
+    box-sizing: border-box; /* Zorgt dat padding de box niet ongewenst breder maakt */
 }
 
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+/* Command: Plaats de zoekknop met de loep precies aan de rechterkant in het invoerveld */
+.search-box .search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%); /* Zorgt dat de loep perfect verticaal gecentreerd staat */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+/* Command: Styling voor de 'Filters wissen' link knop */
+.clear-filters-btn {
+    display: inline-block;
+    color: #cf222e; /* Een rode kleur */
+    text-decoration: none; /* Verwijdert de standaard onderstreping */
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
+/* Zorgt dat er een onderstreping verschijnt als je met de muis over de 'wissen' knop gaat */
+.clear-filters-btn:hover {
     text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }
 
-.attracties{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+
+/* ==========================================================================
+   NIEUW: GRID INDELING EN GEBOUWDE ATTRACTIEKAARTEN (RECHTS)
+   ========================================================================== */
+
+/* Command: Toon de kaarten in een flexibel grid dat zich automatisch aanpast aan de breedte */
+.attracties {
+    display: grid;
+    /* auto-fill berekent zelf hoeveel kaarten van minimaal 280px naast elkaar passen */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px; /* Ruimte tussen de kaartjes */
+    width: 100%;
 }
 
-.attracties .attractie img{
-  width: 90%;
+/* Command: De basis styling van een kaart met ronde hoeken en een subtiele schaduw */
+.attractie-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e6;
+    border-radius: 8px;
+    overflow: hidden; /* Zorgt dat de afbeelding niet buiten de ronde hoeken steekt */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Zorgt voor een vloeiende animatie bij hover */
 }
 
-@media (max-width: 600px){
-  .attracties{
+/* Laat de kaart een klein stukje omhoog bewegen en geeft meer schaduw als je er met de muis op staat */
+.attractie-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Command: Zorg dat afbeeldingen de bovenkant vullen zonder te rekken of te vervormen */
+.card-image img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover; /* Snijdt de afbeelding netjes af zodat hij in de box past */
     display: block;
-  }
 }
 
+/* Command: Ruimte aan de binnenkant van de kaart voor de teksten */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Duwt de inhoud uit zodat alle kaarten even hoog worden */
+}
+
+/* Command: Het themagebied in grijze, kleine letters bovenaan */
+.ride-area {
+    font-size: 0.8rem;
+    color: #57606a;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Zet de letters iets verder uit elkaar */
+    margin: 0 0 6px 0;
+}
+
+/* Command: De titel van de attractie dikgedrukt en donkergrijze letters */
+.ride-title {
+    font-family: Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #24292f;
+    margin: 0 0 12px 0;
+}
+
+/* Command: De beschrijvingstekst krijgt een rustige kleur en regelhoogte */
+.ride-description {
+    font-size: 0.95rem;
+    color: #57606a;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    flex-grow: 1; /* Zorgt dat dit tekstvak alle overige ruimte pakt, zodat de lengte-tekst altijd onderaan staat */
+}
+
+/* Command: De minimale lengte tekst onderaan de kaart */
+.attractie-card .length {
+    font-size: 0.9rem;
+    color: #2da44e; /* Groene kleur */
+    font-weight: bold;
+    margin: auto 0 12px 0;
+}
+
+/* Command: De felgroene, rechthoekige FAST PASS badge onderaan de kaart */
+.badge.fast-pass {
+    display: block;
+    background-color: #2ecc71;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Maakt er automatisch HOOFDLETTERS van */
+}
+
+
+/* ==========================================================================
+   Helper classes & Media Queries
+   ========================================================================== */
+
+/* Verbergt elementen volledig */
+.hidden, [hidden] { display: none !important; }
+
+/* Verbergt tekst visueel, maar houdt het leesbaar voor screenreaders (voor blinden) */
+.sr-only {
+  border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px;
+  overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px;
+}
+
+/* Maakt een element onzichtbaar maar behoudt wel de ruimte die het inneemt */
+.invisible { visibility: hidden; }
+
+/* Een oude techniek om zwevende (floated) elementen netjes binnen hun box te houden */
+.clearfix::before, .clearfix::after { content: " "; display: table; }
+.clearfix::after { clear: both; }
+
+/* MEDIA QUERY: Dit voert code uit als het scherm 768 pixels of smaller is (zoals telefoons) */
+@media (max-width: 768px) {
+  /* Command: Schakel over naar één kolom op kleinere beeldschermen zodat de filters boven de kaarten komen te staan */
+  .container.content {
+    grid-template-columns: 1fr;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    row-gap: 2rem;
+  }
+  
+  /* Command: Maakt de header/bovenbalk ook flexibel voor kleinere schermen */
+  .container.header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
